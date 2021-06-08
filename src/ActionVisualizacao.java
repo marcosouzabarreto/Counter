@@ -33,17 +33,18 @@ public class ActionVisualizacao implements ActionListener {
 
         String[] shelfs = new String[produto.length];
         shelfs[0] = "Selecione a prateleira desejada:";
-        int j=1;
-        for (i=1; i< produto.length; i++){
-
+        int j;
+        for (i=1; i < produto.length; i++){
+        int verifica = 0;
             String verificador;
 
             if (produto[i-1]!= null){
 
                 verificador = produto[i-1].getSetor();
-
-                shelfs[j] = verificador;
-                j++;
+                for (j=1;j < shelfs.length;j++){
+                    if (verificador.equals(shelfs[j])) verifica = 1;
+                }
+                if (verifica==0) shelfs[i] = verificador;
 
             }
         }

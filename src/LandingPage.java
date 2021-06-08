@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 
 public class LandingPage {
@@ -34,12 +35,17 @@ public class LandingPage {
         lookAndFeel();
 
         Produto[] produto = new Produto[1024];
-        int i = 0;
 
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(LandingPage.class.getClassLoader().getResource("counter.png")));
 
         JFrame landingPage = createFrame();
         landingPage.setLayout(null);
 
+        JPanel logoPanel = new JPanel();
+        logoPanel.setBounds(landingPage.getWidth()/2-250,0,500,500);
+        JLabel l = new JLabel();
+        l.setIcon(logo);
+        logoPanel.add(l);
 
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setBounds(100,landingPage.getHeight()-300,
@@ -67,6 +73,7 @@ public class LandingPage {
         buttonsPanel.add(botaoMenuSave);
         buttonsPanel.add(botaoExcluirProduto);
 
+        landingPage.add(logoPanel);
         landingPage.setVisible(true);
     }
 }
