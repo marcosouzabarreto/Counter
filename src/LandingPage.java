@@ -57,8 +57,10 @@ public class LandingPage {
         botaoVisualizacao.addActionListener(new ActionVisualizacao(produto));
 
         JButton botaoMenuSave = new JButton("Menu de Save");
+        botaoMenuSave.addActionListener(new ActionSave(produto));
 
         JButton botaoExcluirProduto = new JButton("Excluir Produtos");
+        botaoExcluirProduto.addActionListener(new ActionExcluirProduto(produto));
 
         buttonsPanel.add(botaoCadastro);
         buttonsPanel.add(botaoVisualizacao);

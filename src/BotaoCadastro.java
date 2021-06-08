@@ -35,13 +35,18 @@ public class BotaoCadastro implements ActionListener {
                 novoProduto.setNome(nameField.getText());
                 novoProduto.setSetor(shelfField.getText());
 
-                produto[i] = novoProduto;
+                if (!novoProduto.getNome().equals("")&&!novoProduto.getSetor().equals("")){
+                    produto[i] = novoProduto;
+                    JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+
+                } else {
+                    JOptionPane.showMessageDialog(null,"Nome ou prateleira nao preenchidos");
+                }
                 exit = false;
             } else i++;
 
         }
-        produto[i] = novoProduto;
-        JOptionPane.showMessageDialog(null, "Deu bom padrin");
+
         f.dispose();
     }
 }

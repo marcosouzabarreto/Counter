@@ -9,7 +9,6 @@ public class ActionCadastro implements ActionListener {
 
     public ActionCadastro(Produto[] produto){
         this.produto = produto;
-
     }
 
     @Override

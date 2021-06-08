@@ -13,7 +13,7 @@ public class ActionVisualizacao implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         int i;
-        int productsCounter = 1;
+
         JFrame f = new JFrame();
         f.setTitle("Colsulta");
         f.setSize(800,500);
@@ -31,17 +31,20 @@ public class ActionVisualizacao implements ActionListener {
         p.setBounds(f.getWidth()/2-100,f.getHeight()/2-100,200,150);
 
 
-
-        for (i=0; i < produto.length; i++){
-            if (produto[i]!=null) {
-                productsCounter++;
-            }
-        }
-        String[] shelfs = new String[productsCounter];
+        String[] shelfs = new String[produto.length];
         shelfs[0] = "Selecione a prateleira desejada:";
-        for (i=1; i< productsCounter; i++){
+        int j=1;
+        for (i=1; i< produto.length; i++){
+
+            String verificador;
+
             if (produto[i-1]!= null){
-                shelfs[i] = produto[i-1].getSetor();
+
+                verificador = produto[i-1].getSetor();
+
+                shelfs[j] = verificador;
+                j++;
+
             }
         }
 
